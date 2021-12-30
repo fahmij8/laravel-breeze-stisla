@@ -1,9 +1,20 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-    <div>
-        {{ $logo }}
-    </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-        {{ $slot }}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="login-brand">
+                {{ $logo }}
+            </div>
+            <div class="card card-primary">
+                <div class="card-header">
+                    {{ $title ?? 'Authentication' }}
+                </div>
+                <div class="card-body">
+                    {{ $slot }}
+                </div>
+            </div>
+            <div class="simple-footer">
+                <small class="text-muted">Laravel Breeze + Stisla by Fahmi Jabbar ©2022</small>
+            </div>
+        </div>
     </div>
 </div>
