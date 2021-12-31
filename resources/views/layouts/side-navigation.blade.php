@@ -30,13 +30,13 @@ $navigation_links = json_decode(json_encode($links), false);
             @if ($link->roles == 'admin' &&
     auth()->user()->hasRole('admin'))
                 <ul class="sidebar-menu">
-                    <li class="menu-header">{{ $link->text }}</li>
                     @if (!$link->is_multi)
                         <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route($link->href) }}"><i
-                                    class="fas fa-fire"></i><span>Dashboard</span></a>
+                                    class="fas fa-fire"></i><span>{{ $link->text }}</span></a>
                         </li>
                     @else
+                        <li class="menu-header">{{ $link->text }}</li>
                         @foreach ($link->href as $section)
                             @php
                                 $routes = collect($section->section_list)
@@ -63,13 +63,13 @@ $navigation_links = json_decode(json_encode($links), false);
                 </ul>
             @elseif ($link->roles == 'all' || $link->roles == 'user')
                 <ul class="sidebar-menu">
-                    <li class="menu-header">{{ $link->text }}</li>
                     @if (!$link->is_multi)
                         <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route($link->href) }}"><i
-                                    class="fas fa-fire"></i><span>Dashboard</span></a>
+                                    class="fas fa-fire"></i><span>{{ $link->text }}</span></a>
                         </li>
                     @else
+                        <li class="menu-header">{{ $link->text }}</li>
                         @foreach ($link->href as $section)
                             @php
                                 $routes = collect($section->section_list)
