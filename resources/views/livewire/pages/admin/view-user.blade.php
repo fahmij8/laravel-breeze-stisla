@@ -28,7 +28,13 @@
                                 <th>{{ ($users->currentpage() - 1) * $users->perpage() + $loop->index + 1 }}</th>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->roles->first()->display_name }}</td>
+                                <td>
+                                    @if ($user->roles->first()->display_name == 'User')
+                                        <span class="badge badge-primary">User</span>
+                                    @else
+                                        <span class="badge badge-dark">Admin</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <div class="d-flex">
                                         @if ($user->roles->first()->display_name == 'User')
