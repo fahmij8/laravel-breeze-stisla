@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\Pages\Admin\AddUser;
+use App\Http\Livewire\Pages\Admin\ViewUser;
+use App\Http\Livewire\Pages\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', Dashboard::class)->middleware(['auth'])->name('dashboard');
+Route::get('/admin/view-user', ViewUser::class)->middleware(['auth'])->name('view-user');
+Route::get('/admin/add-user', AddUser::class)->middleware(['auth'])->name('add-user');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
