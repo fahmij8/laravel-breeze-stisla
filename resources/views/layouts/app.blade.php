@@ -16,6 +16,7 @@
         href="{{ asset('vendor/stisla-2.2.0/assets/modules/bootstrap-social/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/stisla-2.2.0/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/stisla-2.2.0/assets/css/components.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
@@ -27,6 +28,7 @@
     <script src="{{ asset('vendor/stisla-2.2.0/assets/modules/nicescroll/jquery.nicescroll.min.js') }}" defer></script>
     <script src="{{ asset('vendor/stisla-2.2.0/assets/modules/moment.min.js') }}" defer></script>
     <script src="{{ asset('vendor/stisla-2.2.0/assets/js/stisla.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     @livewireScripts
 </head>
 
@@ -39,10 +41,10 @@
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
-                    {{ $header }}
+                    {{ $header ?? '' }}
 
                     <div class="section-body">
-                        {{ $slot }}
+                        {{ $slot ?? '' }}
                     </div>
                 </section>
             </div>
