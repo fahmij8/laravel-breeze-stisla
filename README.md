@@ -24,21 +24,9 @@ Laravel Breeze starter with Stisla Admin Template. Inspired by [Laravel 8 Stisla
 -   Run this command
 
 ```
-# install composer-dependency
+# Installing dependencies
 $ composer install
 
-# install npm package
-$ npm install
-
-# build dev
-$ npm run dev
-
-# generate application key
-$ php artisan key:generate
-
-# laravel migration & seeding
-$ php artisan migrate:fresh --seed
-
-# laravel link up storage files
-$ php artisan storage:link
+# Serve
+$ php artisan serve
 ```
