@@ -53,9 +53,10 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "@php artisan migrate --ansi",
             "npm install",
             "npm run dev",
+            "@php artisan key:generate",
+            "@php artisan migrate:fresh --seed",
             "@php artisan storage:link --ansi"
         ]
     },
