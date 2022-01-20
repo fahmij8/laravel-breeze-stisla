@@ -17,5 +17,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.1",
         "postcss-import": "^14.0.1"
+    },
+    "dependencies": {
+        "pace-js": "^1.2.4"
     }
 }
