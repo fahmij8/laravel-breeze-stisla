@@ -30,11 +30,9 @@
     @livewireScripts
 </head>
 
-<body>
+<body class="layout-3">
     <div id="app">
-        <section class="section">
-            {{ $slot }}
-        </section>
+        {{ $slot }}
     </div>
     <script src="{{ asset('vendor/stisla-2.2.0/assets/js/scripts.js') }}" defer></script>
 </body>
