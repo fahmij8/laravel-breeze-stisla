@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', Dashboard::class)->middleware(['auth'])->name('dashboard');
 Route::get('/admin/view-user', ViewUser::class)->middleware(['auth'])->name('view-user');
